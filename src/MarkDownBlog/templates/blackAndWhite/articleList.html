@@ -1,0 +1,82 @@
+{% extends 'base.html' %} 
+{% load staticfiles %} 
+{% block css %}
+<!-- css -->
+<link rel="stylesheet" href="{% static 'css/blackAndWhite/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/blackAndWhite/custom.css' %}"> 
+{% endblock %} 
+{% block js %}
+<!-- js -->
+<script src="{% static 'js/blackAndWhite/jquery-2.1.3.min.js' %}"></script>
+<script src="{% static 'js/blackAndWhite/bootstrap.min.js' %}"></script> 
+{% endblock %} 
+{% block content %} 
+{% if articles %}
+{% for article in articles %}
+<article class="post post-4">
+	<header class="entry-header">
+		<h1 class="entry-title">
+			<a href="/readArticle/{{ article.path }}.html"> {{ article.title }} </a>
+		</h1>
+		<div class="entry-meta">
+			{% if article.label %} 
+			{% for label in article.label %}
+			<span class="post-category"><a href="#" rel="category tag">{{ label }}</a></span> 
+			{% endfor %} 
+			{% endif %}
+			<span class="post-date"><a href="#"><time class="entry-date" datetime="2012-11-09T23:15:57+00:00">时间:{{ article.str_ctime }}</time></a></span>
+			<span class="post-author"><a href="#">作者:{{ article.author }}</a></span>
+			<span class="comments-link"><a href="#">喜欢:{{ article.love }}</a></span>
+		</div>
+	</header>
+	<div class="entry-content clearfix article">
+		<p>{{ article.content|safe }}</p>
+	</div>
+	<div class="read-more cl-effect-14">
+		<a href="/readArticle/{{ article.path }}.html" class="more-link"> 阅读全文 <span class="meta-nav">→</span></a>
+	</div>
+</article>
+{% endfor %}
+{% else %}
+<!--<article class="post post-4">-->
+<p> oh, 没有文章哎！！～～ </p> 
+<!--</article>-->
+{% endif %}
+{% endblock %}
+
+{% block page %}
+<nav class="pagination">
+	{% if articles %}
+	{% if current_page_num <= 1 %}
+	{% else %}
+	<a class="extend prev" rel="prev" href="1">
+		<i class="fa fa-angle-left">
+			首页
+	</i>
+	</a>
+	<a class="extend prev" rel="prev" href="{{ current_page_num|add:-1 }}">
+		<i class="fa fa-angle-left">
+			<上一页
+	</i>
+	</a>
+	<!--<a class="page-number" href="{{ current_page_num|add:-1 }}">{{ current_page_num|add:-1 }}</a>-->
+	{% endif %}
+	<span class="page-number current">{{ current_page_num }}/{{ all_pages_num }}</span>
+	{% if current_page_num >= all_pages_num %}
+	{% else %}
+	<!--<a class="page-number" href="{{ current_page_num|add:1 }}">{{ current_page_num|add:1 }}</a>-->
+	<a class="extend next" rel="next" href="{{ current_page_num|add:1 }}">
+		<i class="fa fa-angle-right">
+	下一页>
+		</i>
+	</a>
+	<a class="extend prev" rel="prev" href="{{ all_pages_num }}">
+		<i class="fa fa-angle-left">
+			末页
+	</i>
+	</a>
+	{% endif %}
+	{% else %}
+	{% endif %}
+</nav>
+{% endblock %}

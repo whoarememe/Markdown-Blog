@@ -1,0 +1,55 @@
+{% extends 'template.html' %}
+
+{% block css %}
+<link href="/static/css/markdown8.css" type="text/css" rel="stylesheet" />
+<link href="/static/css/highlight.css" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+{% if article %}
+<article id="cnblogs_post_body" class="article">
+<header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+                {{ article.title }}
+    </h1>
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-01T20:45:00+08:00" content="2015-12-01">
+              {{ article.ctime }}
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类于
+              
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/Spring-Boot-with-Mysql/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="/Spring-Boot-with-Mysql/" itemprop="commentsCount">8条评论</span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+{{ article.content|safe }}
+</article>
+{% else %}
+<a> 偶！ 抱歉，找不到文章了～～</a>
+<br>
+{% endif %}
+{% endblock %}

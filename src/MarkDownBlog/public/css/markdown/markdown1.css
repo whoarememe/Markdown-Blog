@@ -1,0 +1,154 @@
+@charset "utf-8";
+ 
+.article html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+ 
+.articlebody{
+    color:#444;
+    font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+    font-size:13px;
+    line-height:1.5em;
+    padding:1em;
+    margin:auto;
+    max-width:42em;
+    background:#fefefe;
+}
+ 
+.article h1, 
+.article h2,
+.article h3, 
+.article h4, 
+.article h5, 
+.article h6 {
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.article h1 {
+    color: #000000;
+    font-size: 28px;
+}
+ 
+.article h2 {
+    /*border-bottom: 2px solid #CCCCCC;*/
+    color: #000000;
+    font-size: 24px;
+}
+ 
+.article h3 {
+    /*border-bottom: 2px solid #CCCCCC;*/
+    font-size: 18px;
+}
+ 
+.article h4 {
+    font-size: 16px;
+}
+ 
+.article h5 {
+    font-size: 14px;
+}
+ 
+.article h6 {
+    color: #777777;
+    background-color: inherit;
+    font-size: 14px;
+}
+ 
+.article hr {
+    height: 0.2em;
+    border: 0;
+    color: #CCCCCC;
+    background-color: #CCCCCC;
+}
+ 
+.article p, 
+.article blockquote, 
+.article ul, 
+.article ol, 
+.article dl, 
+.article li, 
+.article table, 
+.article pre {
+    margin: 15px 0;
+}
+ 
+.article p{
+    margin:1em 0;
+    /*padding-bottom: 1px;*/
+}
+ 
+.article pre { 
+    background-color: #F8F8F8;    
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    overflow: auto;
+    padding: 5px;
+}
+ 
+.article pre code {
+    background-color: #F8F8F8;
+    border: none;    
+    padding: 0;
+}
+ 
+.article code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    background-color:#F8F8F8;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    padding: 0 0.2em;
+    line-height: 1;
+}
+ 
+.article pre > code {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+ 
+ 
+.article a{ color: #0645ad; text-decoration:none;}
+.article a:visited{ color: #0b0080; }
+.article a:hover{ color: #06e; }
+.article a:active{ color:#faa700; }
+.article a:focus{ outline: thin dotted; }
+.article a:hover, a:active{ outline: 0; }
+ 
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+ 
+.article a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+.article a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+ 
+.article blockquote{
+    color:#666666;
+    margin:0;
+    padding-left: 3em;
+    border-left: 0.5em #EEE solid;
+}
+ 
+.article ul,
+.article ol { margin: 1em 0; padding: 0 0 0 2em; }
+.article li p:last-child { margin:0 }
+.article dd { margin: 0 0 0 2em; }
+ 
+.article img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; max-width:100%;}
+ 
+.article table { border-collapse: collapse; border-spacing: 0; }
+.article td { vertical-align: top; }
+ 
+@media only screen and (min-width: 480px) {
+    body{font-size:14px;}
+}
+ 
+@media only screen and (min-width: 768px) {
+    body{font-size:16px;}
+}
+
+.article img {
+    text-align: center;
+    clear: both; 
+    display: block; 
+    margin: auto; 
+    box-shadow: 0 0 10px #06C;
+    border-radius: 10px;
+}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+{% load staticfiles %} 
+{% block css %}
+<!-- css -->
+<link rel="stylesheet" href="{% static 'css/blackAndWhite/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/blackAndWhite/custom.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/blackAndWhite/highlight.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/markdown/markdown1.css' %}"> 
+{% endblock %} 
+{% block js %}
+<!-- js -->
+<script src="{% static 'js/blackAndWhite/jquery-2.1.3.min.js' %}"></script>
+<script src="{% static 'js/blackAndWhite/bootstrap.min.js' %}"></script> 
+{% endblock %} 
+{% block content %} 
+{% if article %}
+<h1 class="page-title">{{ article.title }}</h1>
+<div class="entry-meta">
+    {% if article.label %} {% for label in article.label %}
+    <span class="post-category"><a href="#" rel="category tag">{{ label }}</a></span> {% endfor %} {% endif %}
+    <span class="post-date"><a href="#"><time class="entry-date" datetime="2012-11-09T23:15:57+00:00">时间:{{ article.str_ctime }}</time></a></span>
+    <span class="post-author"><a href="#">作者:{{ article.author }}</a></span>
+    <span class="comments-link"><a href="#">喜欢:{{ article.love }}</a></span>
+</div>
+<article class="post">
+    <div class="entry-content-read clearfix article">
+        {{ article.content|safe }}
+        <div class="height-40px"></div>
+    </div>
+</article>
+{% else %}
+<!--<article class="post post-4">-->
+<p> oh, 文章不见了哎！！～～ </p>
+<!--</article>-->
+{% endif %} {% endblock %}

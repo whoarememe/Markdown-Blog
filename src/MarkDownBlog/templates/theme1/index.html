@@ -1,0 +1,98 @@
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+    <link href="/static/css/markdown8.css" type="text/css" rel="stylesheet" />
+    <link href="/static/css/font.css" type="text/css" rel="stylesheet" />
+    <title>城南旧事</title>
+    <style>
+        #header .logo a {
+            background-image: url("/static/img/logo.png") ;
+            background-repeat:no-repeat;
+            padding: 0;
+            height: 55px;
+            vertical-align:middle;
+            /*margin-top: 0;*/
+        }
+        
+        .header {
+            min-height: 50px;
+            height: 5%;
+            margin: 0 0 5%;
+        }
+        
+        .main_bg {
+            padding: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="container header_cont">
+            <nav id="topMenu" class="menu_click">
+                <div class="menu-top-container">
+                    <ul id="menu-top" class="menu">
+                        <li id="menu-item-3609" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3609"><a href="http://127.0.0.1:8000/blog">首页</a></li>
+                        <li id="menu-item-3609" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3609"><a href="https://www.chengnanjiushi.site/biji">笔记</a></li>
+                        <li id="menu-item-3608" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3608"><a href="http://127.0.0.1:8000/essay">随笔</a></li>
+                        <li id="menu-item-4176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4176"><a href="https://www.chengnanjiushi.site/sheji">设计</a></li>
+                        <li id="menu-item-3607" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3607"><a href="http://127.0.0.1:8000/photography">摄影</a></li>
+                        <li id="menu-item-3607" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3607"><a href="https://www.chengnanjiushi.site/xiaodongxi">小东西</a></li>
+                    </ul>
+                </div> <i class="i_1"></i>
+                <i class="i_2"></i>
+            </nav>
+            <h1 class="logo"><a href="http://www.chengnanjiushi.com">城南旧事</a></h1>
+            <div class="search_click"></div>
+            <form method="get" action="https://biji.io">
+                <input class="search_key" name="s" autocomplete="off" placeholder="Enter search keywords..." type="text" value="" required="required">
+                <button alt="Search" type="submit">Search</button>
+            </form>
+            <div class="search_close"></div>
+        </div>
+    </header>
+    <div class="header"></div>
+    <div class="header-bg-mask">
+        <div class="header-bg"></div>
+    </div>
+    <section class="container main_bg">
+        <section id="sec">
+            <!--PostList-->
+        </section>
+    </section>
+    <footer id="footer" class="container">
+        <section class="left">
+
+        </section>
+        <section class="right">
+            <p>Powered by redusty</p>
+            <p>&copy; 2016 <a href="https://www.chengnanjiushi.site">城南旧事</a></p>
+        </section>
+        <a class="back2top" style="display:none;"></a>
+    </footer>
+    <style>        
+        .header {
+            min-height: 50px;
+            height: 5%;
+            margin: 0 0 5%;
+        }
+        
+        .main_bg {
+            padding: 0;
+        }
+    </style>
+    
+    <script type='text/javascript' src='/static/js/jquery-3.1.0.min.js'></script>
+    <script type='text/javascript' src='/static/js/csrf3.js'></script>
+    <script type='text/javascript' src='/static/js/index.js'></script>
+    <script type='text/javascript' src='/static/js/readArticle.js'></script>
+    <script type='text/javascript' src='/static/js/up.js'></script>
+    <script type='text/javascript' src='/static/js/markdown.min.js'></script>
+</body>
+</html>
